@@ -39,12 +39,14 @@ typedef struct t_gasMix
     double s;
     int n;
     double a[sz];
-    //double* v;
+    double *v;
 } gasMix, *pgasMix;
 
 // extern void teststruct_(pgasMix gas);
 extern void teststruct_(gasMix *gas);
 // extern void teststruct_(struct t_gasMix* gas);
+
+extern double getsum_(int *n, double **a);
 
 int main(int argc, char **argv)
 {
@@ -66,17 +68,29 @@ int main(int argc, char **argv)
     gasMix g;
     g.m_CO2 = 10;
     g.n = 10;
-    //g.a = malloc(g.n * sizeof(double));
+    g.v = malloc(g.n * sizeof(double));
+
     for (int i = 0; i < g.n; i++)
-        g.a[i] = (double)(i + 1);
+    {
+        g.v[i] =  g.a[i] = (double)(i + 1);
+    }
 
     teststruct_(&g);
 
+
     printf("The sum of the elements is %lf.\n", g.s);
     printf("The m_CO2 is %d.\n", g.m_CO2);
-    //printf("The v[0] is %lf.\n", g.v[0]);
 
-    //free(g.a);
+    // printf("The v[0] is %lf.\n", g.v[0]);
+    free(g.v);
+
+    int count = 10;
+    double *arr = malloc(count * sizeof(double));
+    for (int i = 0; i < count; i++)
+        arr[i] = i + 1;
+    double s = getsum_(&count, &arr);
+    printf("The sum2 is %lf!\n", s);
+    free(arr);
 
     return 0;
 }

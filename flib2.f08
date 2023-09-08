@@ -5,87 +5,107 @@
 
 pure real(8) function mystaticfunc(x)
 !00000000000010f9 T mystaticfunc_
-    implicit none
-    real(8),intent(in)::x
+   implicit none
+   real(8),intent(in)::x
 
-    mystaticfunc = -10.0*x
+   mystaticfunc = -10.0*x
 end function
 
 
 pure integer(4) function myintfunc(x)
 !0000000000001137 T myintfunc_
-    implicit none
-    integer(4),intent(in)::x
+   implicit none
+   integer(4),intent(in)::x
 
-    myintfunc = -10*x
+   myintfunc = -10*x
 end function
 
 pure subroutine mysub(x, y)
 !0000000000001150 T mysub_
-    integer(4),intent(in)::x
-    integer(4),intent(out)::y
+   integer(4),intent(in)::x
+   integer(4),intent(out)::y
 
-    y = 100 * x
+   y = 100 * x
 end subroutine
 
 module types
-    implicit none
+   use iso_c_binding
+   implicit none
 
-    integer(4), parameter::sz = 10
-   
-    type :: GasMix
-        sequence
+   integer(4), parameter::sz = 10
 
-        integer(4) :: m_CO2
-        real(8):: s
-        integer(4):: n
-        real(8) :: a(sz)
+   type :: GasMix
+      sequence
 
-        !real(8),allocatable::v(:)
-    end type
+      integer(4) :: m_CO2
+      real(8):: s
+      integer(4):: n
+      real(8) :: a(sz)
 
-    type :: Vector
-        !sequence
-        real(8):: x   !v%x -> v.x
-        real(8):: y   
-        real(8):: z
-    end type
-  
+      real(8),pointer::v(:)
+   end type
+
+   type :: Vector
+      !sequence
+      real(8):: x   !v%x -> v.x
+      real(8):: y
+      real(8):: z
+   end type
+
 end module types
 
 
 pure type(Vector) function addV(v1,v2)
-    use types
-    implicit none
-    type(Vector), intent(in)::v1,v2
+   use types
+   implicit none
+   type(Vector), intent(in)::v1,v2
 
-    addV%x = v1%x + v2%x
-    addV%y = v1%y + v2%y
-    addV%z = v1%z + v2%z
+   addV%x = v1%x + v2%x
+   addV%y = v1%y + v2%y
+   addV%z = v1%z + v2%z
 
 end function
 
 subroutine testStruct(gas)
-!000000000000164a T teststruct_    
-    use types
-    implicit none
+!000000000000164a T teststruct_
+   use types
+   implicit none
 
-    type(GasMix) :: gas
+   type(GasMix) :: gas
 
-    integer(4) :: i
+   integer(4) :: i
 
-    gas%m_CO2 = 500;
+   gas%m_CO2 = 500;
 
-    !allocate(gas%v(10))
-    !gas%v(1) = 888.0;
+   !allocate(gas%v(10))
+   !gas%v(1) = 888.0;
 
-    gas%s = 500.0
-    do i = 1, gas%n
-        gas%s = gas%s + gas%a(i)
-    enddo
-    
+   gas%s = 500.0
+   do i = 1, gas%n
+      gas%s = gas%s + gas%v(i)
+   enddo
+
 endsubroutine
 
+
+real(8) function getSum(n, a) !works
+!0000000000001310 T getsum_
+   integer(4),intent(in)::n
+   real(8), intent(in) :: a(n)
+
+   real(8) :: s
+   integer(4) :: i
+
+   s = 0.0
+   do i=1,n
+      !write(1,*) a(i)
+      s = s +a(i)
+   enddo
+   getSum = s
+
+   !close(unit=1)
+
+end
 
 
 
