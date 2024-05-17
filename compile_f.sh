@@ -1,3 +1,3 @@
 #!/bin/bash
 
-gfortran main.f08 libf.o
+gfortran main.f08 libf.o lib.o

@@ -28,3 +28,8 @@ int f(int a, int b)
 {
     return a+b;
 }
+
+int f2_(int*a, int* b)
+{
+    return *a+*b;
+}
