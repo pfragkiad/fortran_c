@@ -20,7 +20,7 @@
 !      2: 0000000000000000     0 SECTION LOCAL  DEFAULT    1 .text
 !      3: 0000000000000000    46 FUNC    GLOBAL DEFAULT    1 forf_
 
-pure function forf(a, b)
+pure integer(4) function forf(a, b)
    integer(4),intent(in) :: a,b
    forf =  a+b
 end function

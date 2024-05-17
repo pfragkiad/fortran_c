@@ -1,0 +1,12 @@
+/home/cliff/fortran_c/csh_lib/bin/Release/net8.0/linux-x64/csh_lib.deps.json
+/home/cliff/fortran_c/csh_lib/bin/Release/net8.0/linux-x64/csh_lib.dll
+/home/cliff/fortran_c/csh_lib/bin/Release/net8.0/linux-x64/csh_lib.pdb
+/home/cliff/fortran_c/csh_lib/obj/Release/net8.0/linux-x64/csh_lib.GeneratedMSBuildEditorConfig.editorconfig
+/home/cliff/fortran_c/csh_lib/obj/Release/net8.0/linux-x64/csh_lib.AssemblyInfoInputs.cache
+/home/cliff/fortran_c/csh_lib/obj/Release/net8.0/linux-x64/csh_lib.AssemblyInfo.cs
+/home/cliff/fortran_c/csh_lib/obj/Release/net8.0/linux-x64/csh_lib.csproj.CoreCompileInputs.cache
+/home/cliff/fortran_c/csh_lib/obj/Release/net8.0/linux-x64/csh_lib.sourcelink.json
+/home/cliff/fortran_c/csh_lib/obj/Release/net8.0/linux-x64/csh_lib.dll
+/home/cliff/fortran_c/csh_lib/obj/Release/net8.0/linux-x64/refint/csh_lib.dll
+/home/cliff/fortran_c/csh_lib/obj/Release/net8.0/linux-x64/csh_lib.pdb
+/home/cliff/fortran_c/csh_lib/obj/Release/net8.0/linux-x64/ref/csh_lib.dll

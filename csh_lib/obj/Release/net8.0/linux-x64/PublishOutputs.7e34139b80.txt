@@ -1,0 +1,2 @@
+/home/cliff/fortran_c/csh_lib/bin/Release/net8.0/linux-x64/publish/csh_lib.so
+/home/cliff/fortran_c/csh_lib/bin/Release/net8.0/linux-x64/publish/csh_lib.pdb
