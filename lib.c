@@ -14,7 +14,7 @@ SYMBOL TABLE:
 */
 
 /*
-cliff@DESKTOP-TBDVVBV:~/fortran_c$ readelf -s lib.o
+readelf -s lib.o
 
 Symbol table '.symtab' contains 4 entries:
    Num:    Value          Size Type    Bind   Vis      Ndx Name
