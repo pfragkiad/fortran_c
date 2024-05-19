@@ -7,6 +7,8 @@
 // gcc -o main.out test.c a.so flib_path/a2.a
 // gcc -o main.out test.c a3.a
 
+//it is best to use static libraries instead!
+
 // a.so is a dll, so before calling main.out we should ensure that the .so is used
 // LD_LIBRARY_PATH=/home/cliff/mycode/fortran/for_lib
 // export LD_LIBRARY_PATH
